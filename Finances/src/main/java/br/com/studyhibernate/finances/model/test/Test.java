@@ -10,16 +10,11 @@ public class Test {
 	public static void main(String []args) {
 		EntityManager em = new JPAUtil().getEntityManager();
 		
-		Account testAccount = new Account();
-		testAccount.setAccountHolder("Everton Ferreira");
-		testAccount.setAccountNumber("123456");
-		testAccount.setBankBranch("5465659");
-		testAccount.setBankName("Nubank");
-
 		em.getTransaction().begin();
-		em.persist(testAccount);
+		Account ac = em.find(Account.class, 1);
+		ac.setAccountHolder("Everton Ferreira");
+		
 		em.getTransaction().commit();
-
 		em.close();
 	}
 }
