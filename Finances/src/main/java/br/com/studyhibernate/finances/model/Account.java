@@ -50,4 +50,8 @@ public class Account {
 	public void setBankBranch(String bankBranch) {
 		this.bankBranch = bankBranch;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 }

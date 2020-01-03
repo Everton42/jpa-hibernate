@@ -2,6 +2,7 @@ package br.com.studyhibernate.finances.model;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,6 +30,9 @@ public class Transaction {
 	private TransactionType money;
 	@ManyToOne
 	private Account account;
+	@ManyToMany
+	private List<Category> categories;
+	
 
 	public TransactionType getTransactionType() {
 		return money;
@@ -39,6 +44,10 @@ public class Transaction {
 
 	public String getDescription() {
 		return description;
+	}
+
+	public List<Category> getCategories() {
+		return categories;
 	}
 
 	public BigDecimal getValue() {
@@ -75,6 +84,10 @@ public class Transaction {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 }
