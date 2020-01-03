@@ -12,7 +12,9 @@
 
         <!-- Aqui são listadas todas as entidades -->
         <class>br.com.studyhibernate.finances.model.Account</class>
-
+		<class>br.com.studyhibernate.finances.model.Category</class>
+		<class>br.com.studyhibernate.finances.model.Transaction</class>
+		<class>br.com.studyhibernate.finances.model.Client</class>
         <properties>    
             <!-- Propriedades JDBC -->
             <property name="javax.persistence.jdbc.driver" 

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Account {
@@ -14,6 +16,21 @@ public class Account {
 	private String accountNumber;
 	private String bankName;
 	private String bankBranch;
+	@JoinColumn(unique = true)
+	@OneToOne
+	private Client client;
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Client getCliente() {
+		return client;
+	}
+
+	public void setCliente(Client cliente) {
+		this.client = cliente;
+	}
 
 	public Integer getId() {
 		return id;
