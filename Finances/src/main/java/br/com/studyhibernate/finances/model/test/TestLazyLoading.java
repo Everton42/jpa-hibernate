@@ -18,7 +18,7 @@ public class TestLazyLoading {
 			em.getTransaction().begin();
 
 			// String jpql = "select a from Account a"; // com lazy
-			String jpql = "select a from Account a join fetch a.transactions";
+			String jpql = "select distinct a from Account a left join fetch a.transactions";
 
 			Query query = em.createQuery(jpql);
 
